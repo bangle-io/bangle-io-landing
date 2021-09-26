@@ -1,0 +1,33 @@
+{
+  "name": "bangle-io-landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist && touch dist/dummy.json && rm -r dist/* && cp -r ./src/** ./dist && npm run build:css",
+    "build:css": "NODE_ENV=production npx tailwindcss -i ./src/style.css -o ./dist/style.css",
+    "watch:copy": "cpx \"src/*.{html,png,jpg,ico}\" dist --watch",
+    "watch:css": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "watch": "concurrently \"npm run watch:copy\" \"npm run watch:css\" \"npx live-server dist --port=1234\"  ",
+    "server": "npx http-server dist -p 1234"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bangle-io/bangle-io-landing.git"
+  },
+  "keywords": [],
+  "author": "Kushan Joshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bangle-io/bangle-io-landing/issues"
+  },
+  "homepage": "https://github.com/bangle-io/bangle-io-landing#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.3.6",
+    "concurrently": "^6.2.1",
+    "cpx": "^1.5.0",
+    "postcss": "^8.3.8",
+    "tailwindcss": "^2.2.16"
+  }
+}

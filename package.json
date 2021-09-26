@@ -9,7 +9,7 @@
     "build:css": "NODE_ENV=production npx tailwindcss -i ./src/style.css -o ./dist/style.css",
     "watch:copy": "cpx \"src/*.{html,png,jpg,ico}\" dist --watch",
     "watch:css": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
-    "watch": "concurrently \"npm run watch:copy\" \"npm run watch:css\" \"npx live-server dist --port=1234\"  ",
+    "watch": "concurrently \"npm run watch:copy\" \"npm run watch:css\" \"npx live-server dist --port=1234\"",
     "server": "npx http-server dist -p 1234"
   },
   "repository": {

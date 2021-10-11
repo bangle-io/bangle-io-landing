@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "mkdir -p dist && touch dist/dummy.json && rm -r dist/* && cp -r ./src/** ./dist && npm run build:css",
     "build:css": "NODE_ENV=production npx tailwindcss -i ./src/style.css -o ./dist/style.css",
-    "watch:copy": "cpx \"src/*.{html,png,jpg,ico}\" dist --watch",
+    "watch:copy": "cpx \"src/**/*.{html,js,png,jpg,webp,ico}\" dist --watch",
     "watch:css": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
     "watch": "concurrently \"npm run watch:copy\" \"npm run watch:css\" \"npx live-server dist --port=1234\"",
     "server": "npx http-server dist -p 1234"
@@ -28,6 +28,13 @@
     "concurrently": "^6.2.1",
     "cpx": "^1.5.0",
     "postcss": "^8.3.8",
+    "prettier": "^2.4.1",
     "tailwindcss": "^2.2.16"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "quoteProps": "consistent",
+    "arrowParens": "always"
   }
 }

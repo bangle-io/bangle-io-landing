@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-.foo {
-  background-color: red;
+/* .app-width {
+  width: 100%;
+  margin: 0 0.5rem;
+}
+
+@media only screen and (min-device-width: 1200px) {
+  .app-width {
+    max-width: 1180px;
+  }
+} */
+
+@layer components {
+  @responsive {
+    .width-50p {
+      width: 50%;
+    }
+    .width-33p {
+      width: 33%;
+    }
+  }
+
+  .btn-blue {
+    @apply py-2 px-4 bg-blue-500;
+  }
+
+  .content-max-width {
+    @apply max-w-screen-lg;
+  }
+
+  .section {
+    @apply flex flex-col items-center mt-32;
+  }
+
+  .section-villain-inner {
+    @apply content-max-width flex flex-col lg:flex-row items-center;
+  }
+  .section-villain-info {
+    @apply lg:width-50p flex flex-grow flex-col lg:pr-12 max-w-prose;
+  }
+  .section-villain-title {
+    @apply text-3xl mb-3;
+  }
+  .section-villain-description {
+    @apply xl:text-xl text-lg font-light text-gray-700 break-words;
+  }
+  .section-villain-image {
+    @apply lg:width-50p flex flex-grow flex-col max-w-screen-sm mt-12 lg:mt-0;
+  }
+  .section-villain-image img {
+    @apply rounded-xl shadow;
+  }
+  .feature {
+  }
 }

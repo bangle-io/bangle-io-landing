@@ -2,14 +2,219 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta
+      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+      name="viewport"
+    />
     <meta name="theme-color" content="#000000" />
     <title>Bangle.io</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
-  <body>
-    <header>I am a header</header>
-    <main>I am main</main>
-    <footer>I am hooter</footer>
+  <body class="relative overflow-x-hidden">
+    <template id="bangle-io-logo">
+      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+        <path
+          d="M237.44 235.98c24.29-24.72 40.6-53.21 47.18-79.5 6.54-26.17 3.59-51.14-12.26-67.28-15.86-16.14-40.4-19.13-66.1-12.48-25.84 6.7-53.84 23.3-78.12 48.01-24.29 24.72-40.6 53.21-47.17 79.5-6.55 26.18-3.6 51.14 12.26 67.28 15.85 16.14 40.39 19.13 66.1 12.48 25.83-6.7 53.83-23.3 78.11-48.01Z"
+          stroke="#000"
+          stroke-width="10"
+        />
+        <path
+          d="M230.93 231.25c24.29-24.72 40.6-53.22 47.17-79.5 6.55-26.18 3.6-51.14-12.26-67.28-15.85-16.14-40.38-19.14-66.1-12.48-25.83 6.69-53.83 23.3-78.11 48-24.29 24.72-40.6 53.22-47.17 79.51-6.55 26.17-3.6 51.14 12.26 67.27 15.85 16.14 40.38 19.14 66.1 12.48 25.83-6.69 53.83-23.29 78.11-48Z"
+          stroke="#000"
+          stroke-width="10"
+        />
+        <path
+          d="M225.35 226.51c24.29-24.71 40.6-53.21 47.17-79.5 6.54-26.17 3.6-51.14-12.26-67.28-15.85-16.13-40.39-19.13-66.1-12.47-25.83 6.69-53.83 23.29-78.12 48-24.28 24.72-40.6 53.22-47.17 79.5-6.54 26.18-3.6 51.14 12.26 67.28s40.4 19.14 66.1 12.48c25.84-6.69 53.84-23.3 78.12-48Z"
+          stroke="#000"
+          stroke-width="10"
+        />
+        <path
+          d="M223.5 224.62c24.28-24.72 40.59-53.21 47.16-79.5 6.54-26.18 3.6-51.14-12.26-67.28-15.85-16.14-40.39-19.14-66.1-12.48-25.83 6.7-53.83 23.3-78.12 48.01-24.28 24.72-40.6 53.21-47.17 79.5-6.54 26.17-3.6 51.14 12.26 67.28s40.4 19.13 66.1 12.48c25.84-6.7 53.84-23.3 78.12-48.01Z"
+          stroke="#7FCEEE"
+          stroke-width="10"
+        />
+        <path
+          d="M216.98 219.88c24.28-24.71 40.6-53.2 47.17-79.5 6.54-26.17 3.6-51.14-12.26-67.27-15.86-16.14-40.39-19.14-66.1-12.48-25.83 6.69-53.83 23.3-78.12 48-24.28 24.72-40.6 53.22-47.17 79.51-6.54 26.17-3.6 51.14 12.26 67.27 15.86 16.14 40.39 19.14 66.1 12.48 25.84-6.69 53.83-23.29 78.12-48Z"
+          stroke="#7FCEEE"
+          stroke-width="10"
+        />
+        <path
+          d="M213.26 216.1c24.28-24.72 40.6-53.22 47.17-79.5 6.54-26.18 3.6-51.14-12.26-67.28s-40.39-19.14-66.1-12.48c-25.83 6.7-53.83 23.3-78.12 48-24.28 24.72-40.6 53.22-47.17 79.51-6.54 26.17-3.6 51.14 12.26 67.28 15.86 16.13 40.39 19.13 66.1 12.48 25.84-6.7 53.83-23.3 78.12-48.01Z"
+          stroke="#7FCEEE"
+          stroke-width="10"
+        />
+        <path
+          d="M207.68 211.36c24.28-24.71 40.6-53.2 47.17-79.5 6.54-26.17 3.6-51.14-12.26-67.27-15.86-16.14-40.4-19.14-66.1-12.48-25.84 6.69-53.84 23.29-78.12 48-24.29 24.72-40.6 53.22-47.17 79.5-6.54 26.18-3.6 51.15 12.26 67.28 15.86 16.14 40.39 19.14 66.1 12.48 25.83-6.69 53.83-23.3 78.12-48Z"
+          stroke="#7FCEEE"
+          stroke-width="10"
+        />
+        <path
+          d="M203.96 207.58c24.28-24.72 40.6-53.22 47.17-79.5 6.54-26.18 3.6-51.14-12.26-67.28s-40.4-19.14-66.1-12.48c-25.84 6.69-53.84 23.3-78.12 48-24.29 24.72-40.6 53.22-47.17 79.51-6.54 26.17-3.6 51.14 12.26 67.28 15.85 16.13 40.39 19.13 66.1 12.47 25.83-6.69 53.83-23.29 78.12-48Z"
+          stroke="#7FCEEE"
+          stroke-width="10"
+        />
+        <path
+          d="M200.24 203.79c24.28-24.72 40.6-53.21 47.16-79.5 6.55-26.17 3.6-51.14-12.25-67.28-15.86-16.14-40.4-19.13-66.1-12.48-25.84 6.7-53.84 23.3-78.12 48.01-24.29 24.72-40.6 53.21-47.17 79.5-6.55 26.18-3.6 51.14 12.26 67.28 15.85 16.14 40.38 19.13 66.1 12.48 25.83-6.7 53.83-23.3 78.12-48.01Z"
+          stroke="#000"
+          stroke-width="10"
+        />
+        <path
+          d="M196.51 200c24.29-24.71 40.6-53.21 47.17-79.5 6.55-26.17 3.6-51.14-12.26-67.28-15.85-16.13-40.38-19.13-66.1-12.47-25.83 6.69-53.83 23.29-78.11 48-24.29 24.72-40.6 53.22-47.17 79.5-6.55 26.18-3.6 51.15 12.26 67.28 15.85 16.14 40.38 19.14 66.1 12.48 25.83-6.69 53.83-23.3 78.11-48Z"
+          stroke="#000"
+          stroke-width="10"
+        />
+        <path
+          d="M191.86 195.27c24.29-24.72 40.6-53.21 47.17-79.5 6.54-26.17 3.6-51.14-12.26-67.28-15.85-16.14-40.39-19.14-66.1-12.48-25.83 6.7-53.83 23.3-78.12 48.01-24.28 24.72-40.6 53.21-47.17 79.5-6.54 26.17-3.59 51.14 12.27 67.28 15.85 16.13 40.38 19.13 66.1 12.48 25.83-6.7 53.83-23.3 78.11-48.01Z"
+          stroke="#000"
+          stroke-width="10"
+        />
+      </svg>
+    </template>
+    <header class="w-full flex justify-center px-2">
+      <div class="w-full xl:mx-12 xl:max-w-7xl flex justify-between pt-4">
+        <span class="inline-flex items-center">
+          <bangle-logo data-class="w-8 h-8"></bangle-logo>
+          <a class="text-3xl" href="#">Bangle.io</a>
+        </span>
+        <nav role="navigation">
+          <a class="ml-6" href="/Features">Features</a>
+          <a class="ml-6" href="/help">Help</a>
+          <a class="ml-6" href="/Community">Community</a>
+        </nav>
+      </div>
+    </header>
+    <main class="w-full flex flex-col px-2">
+      <section class="section mt-24">
+        <div class="content-max-width flex flex-col items-center">
+          <h1 class="xl:text-5xl text-3xl font-bold text-center break-words">
+            Note taking for the next decade
+          </h1>
+          <h2
+            class="
+              xl:text-2xl
+              text-xl
+              mt-6
+              max-w-screen-sm
+              font-light
+              text-gray-700 text-center
+              break-words
+            "
+          >
+            Bangle.io is a powerful yet simple note taking web app that works on
+            top of your locally saved Markdown files.
+          </h2>
+        </div>
+        <div class="content-max-width flex flex-col mt-12">
+          <div class="xl:px-24">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  photos/hero-philosophy/hero-philosophy-640x388.webp  1024w,
+                  photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w
+                "
+              />
+              <img
+                class="rounded-xl shadow"
+                src="photos/hero-philosophy/hero-philosophy-640x388.jpg"
+                srcset="
+                  photos/hero-philosophy/hero-philosophy-640x388.jpg  1024w,
+                  photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w
+                "
+                alt="…"
+              />
+            </picture>
+          </div>
+
+          <!-- <bangle-logo data-class="w-28 h-28"></bangle-logo> -->
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-villain-inner">
+          <div class="section-villain-info">
+            <h1 class="section-villain-title">Is your data held hostage?</h1>
+            <p class="section-villain-description">
+              Bangle.io saves everything in a folder of your choice in your
+              computer. Nothing every leaves your computer, this is
+              fundamentally safer than any amount of encryption other products
+              put in their servers.
+            </p>
+          </div>
+          <div class="section-villain-image">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  photos/hero-philosophy/hero-philosophy-640x388.webp  1024w,
+                  photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w
+                "
+              />
+              <img
+                src="photos/hero-philosophy/hero-philosophy-640x388.jpg"
+                srcset="
+                  photos/hero-philosophy/hero-philosophy-640x388.jpg  1024w,
+                  photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w
+                "
+                alt="…"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-villain-inner">
+          <div class="section-villain-info">
+            <h1 class="section-villain-title">Is your data held hostage?</h1>
+            <p class="section-villain-description">
+              Bangle.io saves everything in a folder of your choice in your
+              computer. Nothing every leaves your computer, this is
+              fundamentally safer than any amount of encryption other products
+              put in their servers.
+            </p>
+          </div>
+          <div class="section-villain-image">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  photos/hero-philosophy/hero-philosophy-640x388.webp  1024w,
+                  photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w
+                "
+              />
+              <img
+                src="photos/hero-philosophy/hero-philosophy-640x388.jpg"
+                srcset="
+                  photos/hero-philosophy/hero-philosophy-640x388.jpg  1024w,
+                  photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w
+                "
+                alt="…"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="content-max-width w-full grid grid-cols-3 gap-4">
+          <div class="feature">Search</div>
+          <div class="feature">Tags</div>
+          <div class="feature">Backlinks</div>
+          <div class="feature">Markdown shortcuts</div>
+          <div class="feature">Split screen</div>
+          <div class="feature">Emoji</div>
+          <div class="feature">Date parsing</div>
+          <div class="feature">Todo lists</div>
+          <div class="feature">Action palette</div>
+          <div class="feature">Multiple workspaces</div>
+          <div class="feature">Collapsible headings</div>
+          <div class="feature">Keyboard shortcuts</div>
+          <div class="feature">Images</div>
+        </div>
+      </section>
+    </main>
+    <footer class="w-full flex justify-center px-2">
+      <div class="app-width">I am footer</div>
+    </footer>
     <script
       src="https://cdn.usefathom.com/script.js"
       data-site="GZBRVXXS"

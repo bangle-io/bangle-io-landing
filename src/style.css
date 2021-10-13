@@ -13,6 +13,10 @@
   }
 } */
 
+a.active {
+  background-color: pink;
+}
+
 @layer components {
   @responsive {
     .width-50p {

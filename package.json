@@ -9,7 +9,7 @@
     "build:css": "NODE_ENV=production npx tailwindcss -i ./src/style.css -o ./dist/style.css",
     "watch:copy": "cpx \"src/**/*.{html,js,png,jpg,webp,ico}\" dist --watch",
     "watch:css": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
-    "watch": "concurrently \"npm run watch:copy\" \"npm run watch:css\" \"npx live-server dist --port=1234\"",
+    "watch": "concurrently \"npm run watch:copy\" \"npm run watch:css\" \"npx http-server dist --p 1234\"",
     "server": "npx http-server dist -p 1234"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "autoprefixer": "^10.3.6",
     "concurrently": "^6.2.1",
     "cpx": "^1.5.0",
+    "http-server": "^13.0.2",
     "postcss": "^8.3.8",
     "prettier": "^2.4.1",
     "tailwindcss": "^2.2.16"
@@ -36,5 +37,8 @@
     "trailingComma": "all",
     "quoteProps": "consistent",
     "arrowParens": "always"
+  },
+  "dependencies": {
+    "@github/markdown-toolbar-element": "^2.0.0"
   }
 }

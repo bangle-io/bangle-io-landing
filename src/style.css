@@ -17,6 +17,16 @@ a.active {
   background-color: pink;
 }
 
+bangle-header {
+  height: 3.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+bangle-footer {
+  display: flex;
+}
+
 @layer components {
   @responsive {
     .width-50p {
@@ -25,6 +35,18 @@ a.active {
     .width-33p {
       width: 33%;
     }
+  }
+
+  body {
+    @apply relative overflow-x-hidden;
+  }
+
+  main {
+    @apply w-full flex flex-col px-2 pb-32;
+  }
+
+  bangle-footer a {
+    @apply text-gray-600;
   }
 
   .btn-blue {

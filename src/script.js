@@ -72,13 +72,13 @@ class BangleHeader extends HTMLElement {
   connectedCallback() {
     const currentPath = (p) => window.location.pathname === p;
     this.innerHTML = `
-    <header class="w-full flex justify-center px-2">
-      <div class="w-full xl:mx-12 xl:max-w-7xl flex justify-between pt-4">
-        <span class="inline-flex items-center">
+    <header class="w-full flex justify-center px-4">
+      <div class="w-full xl:mx-12 xl:max-w-7xl flex justify-between">
+        <div class="inline-flex items-center">
           <bangle-logo child-class="w-8 h-8"></bangle-logo>
-          <a class="text-3xl" href="/">Bangle.io</a>
-        </span>
-        <nav role="navigation">
+          <a class="text-3xl pl-1" href="/">Bangle.io</a>
+        </div>
+        <nav role="navigation" class="flex items-center">
           <a class="ml-6 ${
             currentPath('/help') ? 'active ' : ''
           }" href="/help">Help</a>
@@ -94,6 +94,95 @@ class BangleHeader extends HTMLElement {
 if (!window.customElements.get('bangle-header')) {
   window.BangleHeader = BangleHeader;
   window.customElements.define('bangle-header', BangleHeader);
+}
+
+class BangleFooter extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+    <footer class="w-full flex justify-center px-2 bg-gray-200 py-12 text-gray-600">
+      <div class="content-max-width w-full flex  flex-col lg:flex-row justify-between px-14">
+        <div class="flex flex-col">
+          <div class="">© 2021 Bangle.io</div>
+          <div class="flex flex-col md:flex-row items-start mt-2">
+            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/about">About</a>
+            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/">Features</a>
+            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/community">Community</a>
+            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/help">Help</a>
+            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/privacy">Privacy Policy</a>
+            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/roadmap">Roadmap</a>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-row items-center mt-2 lg:mt-0">
+            <a
+              class="pr-8 inline-flex flex-row-reverse"
+              href="https://twitter.com/bangle_io"
+              target="_blank"
+            >
+              <span class="pl-2 sr-only">Twitter</span>
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="#1DA1F2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="pr-8 inline-flex flex-row-reverse"
+              href="https://discord.gg/GvvbWJrVQY"
+              target="_blank"
+            >
+              <span class="pl-2 sr-only">Discord</span>
+              <svg
+                aria-hidden="true"
+                class="h-6 w-6"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 71 55"
+              >
+                <g clip-path="url(#a)">
+                  <path
+                    d="M60.1 4.9A58.55 58.55 0 0 0 45.65.42a.22.22 0 0 0-.23.1 40.78 40.78 0 0 0-1.8 3.7 54.05 54.05 0 0 0-16.23 0 37.4 37.4 0 0 0-1.83-3.7.23.23 0 0 0-.23-.1c-5.07.87-9.92 2.4-14.45 4.48a.2.2 0 0 0-.1.08C1.58 18.73-.94 32.14.3 45.39c0 .07.05.13.1.17a58.88 58.88 0 0 0 17.72 8.96c.1.03.2 0 .25-.08a42.08 42.08 0 0 0 3.63-5.9.22.22 0 0 0-.12-.31 38.77 38.77 0 0 1-5.54-2.64.23.23 0 0 1-.02-.38l1.1-.86a.22.22 0 0 1 .23-.03 41.99 41.99 0 0 0 35.68 0 .22.22 0 0 1 .23.02c.36.3.73.59 1.1.87.13.1.12.3-.02.38a36.38 36.38 0 0 1-5.54 2.63.23.23 0 0 0-.12.32 47.25 47.25 0 0 0 3.63 5.9c.05.07.15.1.24.08 5.8-1.8 11.69-4.5 17.76-8.96.06-.04.09-.1.1-.17C72.16 30.08 68.2 16.78 60.2 5a.18.18 0 0 0-.1-.1ZM23.73 37.33c-3.5 0-6.38-3.22-6.38-7.16 0-3.95 2.82-7.16 6.38-7.16 3.58 0 6.43 3.24 6.38 7.16 0 3.94-2.83 7.16-6.38 7.16Zm23.59 0c-3.5 0-6.38-3.22-6.38-7.16 0-3.95 2.82-7.16 6.38-7.16 3.58 0 6.43 3.24 6.38 7.16 0 3.94-2.8 7.16-6.38 7.16Z"
+                    fill="#5865F2"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M0 0h71v55H0z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+            <a
+              class="pr-8 inline-flex flex-row-reverse"
+              href="https://github.com/bangle-io"
+              target="_blank"
+            >
+              <span class="pl-2 sr-only">Github</span>
+              <img
+                src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"
+                width="22"
+                height="22"
+                class="d-block"
+                loading="lazy"
+                decoding="async"
+                alt="GitHub mark"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>`;
+  }
+}
+
+if (!window.customElements.get('bangle-footer')) {
+  window.BangleFooter = BangleFooter;
+  window.customElements.define('bangle-footer', BangleFooter);
 }
 
 function last(arr) {

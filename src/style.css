@@ -27,29 +27,6 @@ bangle-footer {
   display: flex;
 }
 
-.overlap-img-parent {
-  display: grid;
-  grid-template-columns: [col-first] 1fr [col-second] 1fr [col-third] 1fr [col-fourth];
-  grid-template-rows: [row-first] 1fr [row-second] 1fr [row-third] 1fr [row-fourth];
-}
-
-.overlap-img-parent .upper {
-  grid-column: col-first / col-third;
-  grid-row: row-second / row-fourth;
-  z-index: 5;
-  animation: upper-animate 4s linear infinite alternate;
-  transform: scale(1.1) translate(20px);
-}
-
-.overlap-img-parent .lower {
-  z-index: 4;
-  grid-row-start: row-first;
-  grid-row-end: row-third;
-  grid-column-start: col-second;
-  grid-column-end: col-fourth;
-  transform: translate(0, -5px);
-}
-
 @layer components {
   @responsive {
     .width-50p {
@@ -57,6 +34,20 @@ bangle-footer {
     }
     .width-33p {
       width: 33%;
+    }
+    .overlap-img-parent-grid {
+      display: grid;
+      grid-template-columns: 0.25fr repeat(6, 1fr) 0.25fr;
+      grid-template-rows: 0.75fr 0.5fr 30px 0.25fr 1fr 1fr 1fr 1fr;
+    }
+
+    .overlap-img-description-reg-w {
+      grid-column: -5/-1;
+      grid-row: 1 / 3;
+    }
+    .overlap-img-description-full-w {
+      grid-column: 1 / -1;
+      grid-row: 1 / 3;
     }
   }
 
@@ -104,4 +95,16 @@ bangle-footer {
   }
   .feature {
   }
+}
+
+.overlap-img-parent-upper {
+  grid-column: -6/-2;
+  grid-row: 6 / 9;
+  z-index: 5;
+}
+
+.overlap-img-parent-lower {
+  z-index: 4;
+  grid-row: 4/8;
+  grid-column: 2/-4;
 }

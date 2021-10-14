@@ -27,6 +27,29 @@ bangle-footer {
   display: flex;
 }
 
+.overlap-img-parent {
+  display: grid;
+  grid-template-columns: [col-first] 1fr [col-second] 1fr [col-third] 1fr [col-fourth];
+  grid-template-rows: [row-first] 1fr [row-second] 1fr [row-third] 1fr [row-fourth];
+}
+
+.overlap-img-parent .upper {
+  grid-column: col-first / col-third;
+  grid-row: row-second / row-fourth;
+  z-index: 5;
+  animation: upper-animate 4s linear infinite alternate;
+  transform: scale(1.1) translate(20px);
+}
+
+.overlap-img-parent .lower {
+  z-index: 4;
+  grid-row-start: row-first;
+  grid-row-end: row-third;
+  grid-column-start: col-second;
+  grid-column-end: col-fourth;
+  transform: translate(0, -5px);
+}
+
 @layer components {
   @responsive {
     .width-50p {
@@ -42,7 +65,7 @@ bangle-footer {
   }
 
   main {
-    @apply w-full flex flex-col px-2 pb-32;
+    @apply w-full flex flex-col px-2 md:px-6 pb-32;
   }
 
   bangle-footer a {

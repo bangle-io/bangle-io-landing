@@ -36,7 +36,8 @@
     "singleQuote": true,
     "trailingComma": "all",
     "quoteProps": "consistent",
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "printWidth": 120
   },
   "dependencies": {
     "@github/markdown-toolbar-element": "^2.0.0"

@@ -9,78 +9,40 @@
     <script type="module" src="script.js"></script>
     <script src="https://cdn.usefathom.com/script.js" data-site="GZBRVXXS" defer></script>
   </head>
-  <body>
+  <body class="dark:bg-black dark:text-white">
     <bangle-header></bangle-header>
     <main>
-      <section class="section mt-24">
-        <div class="content-max-width flex flex-col items-center">
-          <h1 class="xl:text-6xl text-4xl font-black text-center break-words">Note taking for the next decade</h1>
-          <h2 class="xl:text-2xl text-xl mt-6 max-w-screen-sm font-light text-gray-700 text-center break-words">
-            Bangle.io is a powerful yet simple note taking web app that works on top of your locally saved Markdown
-            files.
+      <section class="mt-24 section">
+        <div class="flex flex-col items-center content-max-width">
+          <h1 class="text-4xl font-black text-center break-words xl:text-6xl">Note taking for the next decade</h1>
+          <h2 class="max-w-screen-sm mt-6 text-xl font-light text-center text-gray-700 break-words xl:text-2xl dark:text-gray-100">
+            Bangle.io is a powerful yet simple note taking web app that works on top of your locally saved Markdown files.
           </h2>
         </div>
-        <div class="content-max-width flex flex-col mt-12">
+        <div class="flex flex-col mt-12 content-max-width">
           <div class="xl:px-24">
             <picture>
-              <source
-                type="image/webp"
-                srcset="
-                  photos/hero-philosophy/hero-philosophy-640x388.webp  1024w,
-                  photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w
-                "
-              />
-              <img
-                class="rounded-xl shadow"
-                src="photos/hero-philosophy/hero-philosophy-640x388.jpg"
-                srcset="
-                  photos/hero-philosophy/hero-philosophy-640x388.jpg  1024w,
-                  photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w
-                "
-                alt="…"
-              />
+              <source type="image/webp" srcset="photos/hero-philosophy/hero-philosophy-640x388.webp 1024w, photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w" />
+              <img class="shadow rounded-xl" src="photos/hero-philosophy/hero-philosophy-640x388.jpg" srcset="photos/hero-philosophy/hero-philosophy-640x388.jpg 1024w, photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w" alt="…" />
             </picture>
           </div>
         </div>
-        <div class="content-max-width flex flex-col mt-12 items-center">
-          <a
-            href="https://app.bangle.io"
-            class="
-              to-app-link
-              text-center
-              w-full
-              sm:w-auto
-              flex-none
-              bg-gray-900
-              text-white text-lg
-              leading-6
-              font-semibold
-              py-3
-              px-6
-              border border-transparent
-              rounded-xl
-              focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none
-              transition-colors
-              duration-200
-              mb-4
-            "
-          >
-            Get started
-          </a>
-          <div class="flex flex-row">
-            <span class="px-2 text-gray-500 text-sm inline-flex flex-row items-center">
-              <check-icon child-class="w-3 h-3 mr-1"></check-icon>
+        <div class="flex flex-col items-center mt-12 content-max-width">
+          <a href="https://app.bangle.io" class="to-app-link"> Get started </a>
+          <div class="flex flex-row flex-wrap">
+            <span class="inline-flex flex-row items-center px-2 text-xs text-gray-500 md:text-base dark:text-gray-300">
+              <check-icon child-class="w-3 h-3 mr-1 "></check-icon>
               <span>No sign up</span>
             </span>
-            <span class="px-2 text-gray-500 text-sm inline-flex flex-row items-center">
+            <span class="inline-flex flex-row items-center px-2 text-xs text-gray-500 md:text-base dark:text-gray-300">
               <check-icon child-class="w-3 h-3 mr-1"></check-icon>
               <span>Fully offline</span>
             </span>
-            <span class="px-2 text-gray-500 text-sm inline-flex flex-row items-center">
-              <check-icon child-class="w-3 h-3 mr-1"></check-icon>
+            <span class="flex-row items-center hidden px-2 text-gray-500 md:inline-flex dark:text-gray-300">
+              <check-icon child-class="w-3 h-3 mr-1 "></check-icon>
               <span>No install</span>
             </span>
-            <span class="px-2 text-gray-500 text-sm inline-flex flex-row items-center">
+            <span class="inline-flex flex-row items-center px-2 text-xs text-gray-500 md:text-base dark:text-gray-300">
               <check-icon child-class="w-3 h-3 mr-1"></check-icon>
               <span>No data hostage</span>
             </span>
@@ -92,36 +54,60 @@
         <div class="flex flex-col w-full content-max-width">
           <h2 class="section-villain-title">Own your notes</h2>
           <div class="flex flex-row w-full">
-            <h2 class="section-villain-description mb-6 md:mb-0 max-w-3xl">
-              Bangle.io saves all your notes locally in a folder of your choice as plain Markdown files.
-            </h2>
+            <h2 class="max-w-3xl section-villain-description">Bangle.io saves all your notes locally in a folder of your choice as plain Markdown files.</h2>
           </div>
-          <div class="section-own-notes-trio"></div>
-          <div class="flex flex-col mt-3 md:mt-2 md:section-own-notes-video-parent-grid">
-            <video
-              autoplay
-              muted
-              loop
-              playsinline
-              class="section-own-notes-video-parent-upper rounded-xl shadow-xl mb-3 md:mb-0"
-              height="738"
-              width="1920"
-              poster="photos/section-own-notes-upper-1920x738.webp"
-            >
-              <source src="photos/section-own-notes-upper-1920x738.mp4" type="video/mp4" />
-            </video>
-            <video
-              autoplay
-              muted
-              loop
-              playsinline
-              class="rounded-xl shadow-xl section-own-notes-video-parent-lower"
-              height="760"
-              width="1918"
-              poster="photos/section-own-notes-lower-1919x760.webp"
-            >
-              <source src="photos/section-own-notes-lower-1918x760.mp4" type="video/mp4" />
-            </video>
+          <div class="flex flex-col w-full md:mt-6 section-own-notes-trio md:flex-row">
+            <div class="flex flex-row flex-grow mt-3 mr-12 border-gray-200 border-solid md:flex-col md:mt-0 md:border-r-2 dark:border-gray-700">
+              <span class="flex items-center self-center h-6 mr-6 text-3xl text-gray-700 md:self-start dark:text-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </span>
+              <span class="flex flex-col">
+                <span class="text-lg font-semibold">No data lockin</span>
+                <span>there is nothing like that</span>
+              </span>
+            </div>
+            <div class="flex flex-row flex-grow mt-3 mr-12 border-gray-200 border-solid md:flex-col md:mt-0 md:border-r-2 dark:border-gray-700">
+              <span class="flex items-center self-center h-6 mr-6 text-3xl text-gray-700 md:self-start dark:text-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 128" class="w-7" stroke="currentColor">
+                  <rect width="198" height="118" x="5" y="5" ry="10" stroke-width="10" fill="none" />
+                  <path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" fill="currentColor" />
+                </svg>
+              </span>
+              <span class="flex flex-col">
+                <span class="text-lg font-semibold">Save in Markdown</span>
+                <span>there is nothing like that</span>
+              </span>
+            </div>
+            <div class="flex flex-row flex-grow mt-3 mr-12 md:flex-col md:mt-0">
+              <span class="flex items-center self-center h-6 mr-6 text-3xl text-gray-700 md:self-start dark:text-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414"
+                  />
+                </svg>
+              </span>
+              <span class="flex flex-col">
+                <span class="text-lg font-semibold">Works offline</span>
+                <span>there is nothing like that</span>
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col mt-3 md:mt-9 md:section-own-notes-video-parent-grid">
+            <div class="mb-3 section-own-notes-video-parent-upper md:mb-0">
+              <video autoplay muted loop playsinline class="shadow-md rounded-xl" height="738" width="1920" poster="photos/section-own-notes-upper-1920x738.webp">
+                <source src="photos/section-own-notes-upper-1920x738.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="section-own-notes-video-parent-lower">
+              <video autoplay muted loop playsinline class="shadow-md rounded-xl" height="760" width="1918" poster="photos/section-own-notes-lower-1919x760.webp">
+                <source src="photos/section-own-notes-lower-1918x760.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>
@@ -130,9 +116,7 @@
         <div class="section-villain-inner">
           <div class="section-villain-info">
             <h2 class="section-villain-title">Rich editing</h2>
-            <h3 class="section-villain-description">
-              Bangle.io provides a clean WYSIWYG interface so you can focus on your notes.
-            </h3>
+            <h3 class="section-villain-description">Bangle.io provides a clean WYSIWYG interface so you can focus on your notes.</h3>
             <ul class="section-list">
               <li>Collapsible headings</li>
               <li>Date parsing</li>
@@ -143,21 +127,8 @@
           </div>
           <div class="section-villain-image">
             <picture>
-              <source
-                type="image/webp"
-                srcset="
-                  photos/hero-philosophy/hero-philosophy-640x388.webp  1024w,
-                  photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w
-                "
-              />
-              <img
-                src="photos/hero-philosophy/hero-philosophy-640x388.jpg"
-                srcset="
-                  photos/hero-philosophy/hero-philosophy-640x388.jpg  1024w,
-                  photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w
-                "
-                alt="…"
-              />
+              <source type="image/webp" srcset="photos/hero-philosophy/hero-philosophy-640x388.webp 1024w, photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w" />
+              <img src="photos/hero-philosophy/hero-philosophy-640x388.jpg" srcset="photos/hero-philosophy/hero-philosophy-640x388.jpg 1024w, photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w" alt="…" />
             </picture>
           </div>
         </div>
@@ -167,9 +138,7 @@
         <div class="section-villain-inner">
           <div class="section-villain-info">
             <h2 class="section-villain-title">Organize notes</h2>
-            <h3 class="section-villain-description">
-              Whether you are a folder person or backlink gardener Bangle.io has you covered.
-            </h3>
+            <h3 class="section-villain-description">Whether you are a folder person or backlink gardener Bangle.io has you covered.</h3>
             <ul class="section-list">
               <li>Action palette</li>
               <li>Backlinks</li>
@@ -180,36 +149,25 @@
           </div>
           <div class="section-villain-image">
             <picture>
-              <source
-                type="image/webp"
-                srcset="
-                  photos/hero-philosophy/hero-philosophy-640x388.webp  1024w,
-                  photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w
-                "
-              />
-              <img
-                src="photos/hero-philosophy/hero-philosophy-640x388.jpg"
-                srcset="
-                  photos/hero-philosophy/hero-philosophy-640x388.jpg  1024w,
-                  photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w
-                "
-                alt="…"
-              />
+              <source type="image/webp" srcset="photos/hero-philosophy/hero-philosophy-640x388.webp 1024w, photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w" />
+              <img src="photos/hero-philosophy/hero-philosophy-640x388.jpg" srcset="photos/hero-philosophy/hero-philosophy-640x388.jpg 1024w, photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w" alt="…" />
             </picture>
           </div>
         </div>
       </section>
 
       <section class="section section-faq">
-        <div class="flex flex-col w-full content-max-width px-4 lg:px-32 py-4 rounded-lg">
-          <h2 class="section-villain-title px-4">FAQ</h2>
+        <div class="flex flex-col w-full px-4 py-4 rounded-lg content-max-width lg:px-32">
+          <h2 class="px-4 section-villain-title">FAQ</h2>
           <div class="w-full">
             <accordion-container>
               <h3 class="text-xl font-semibold" data-summary>
-                <span>Why should I use Bangle.io for note taking?</span>
+                <span>Why should I use Bangle.io?</span>
               </h3>
               <div data-panel>One content</div>
               <h3 class="text-xl font-semibold" data-summary>Where are my notes stored?</h3>
+              <div data-panel>Three content</div>
+              <h3 class="text-xl font-semibold" data-summary>How do I backup data?</h3>
               <div data-panel>Three content</div>
               <h3 class="text-xl font-semibold" data-summary>Is there a desktop app?</h3>
               <div data-panel>Two content</div>
@@ -217,18 +175,22 @@
               <div data-panel>Three content</div>
               <h3 class="text-xl font-semibold" data-summary>What is the browser requirement?</h3>
               <div data-panel>Three content</div>
-              <h3 class="text-xl font-semibold" data-summary>How do I backup data?</h3>
-              <div data-panel>Three content</div>
-              <h3 class="text-xl font-semibold" data-summary>
-                How do I try it without leaving my existing note taking app?
-              </h3>
-              <div data-panel>Three content</div>
-              <h3 class="text-xl font-semibold" data-summary>Is Bangle.io free? How do I support development?</h3>
+              <h3 class="text-xl font-semibold" data-summary>Is Bangle.io free?</h3>
               <div data-panel>Three content</div>
             </accordion-container>
           </div>
         </div>
       </section>
+      <!-- <section class="section">
+        <div class="flex flex-col items-center mt-12 bg-blue-100 rounded-lg content-max-width">
+          <div class="inline-flex items-center mb-12">
+            <bangle-logo child-class="w-8 h-8"></bangle-logo>
+            <a class="pl-1 text-3xl" href="/">Bangle.io</a>
+          </div>
+
+          <a href="https://app.bangle.io" class="to-app-link"> Get started </a>
+        </div>
+      </section> -->
     </main>
     <bangle-footer></bangle-footer>
   </body>

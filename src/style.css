@@ -82,7 +82,7 @@ bangle-footer {
     @apply lg:width-50p flex flex-grow flex-col lg:pr-12 max-w-prose;
   }
   .section-villain-title {
-    @apply text-3xl mb-3;
+    @apply text-3xl mb-3 font-bold;
   }
   .section-villain-description {
     @apply xl:text-xl text-lg font-light text-gray-700 break-words;
@@ -94,6 +94,26 @@ bangle-footer {
     @apply rounded-xl shadow;
   }
   .feature {
+  }
+
+  accordion-container h3 {
+    @apply px-4 py-3 select-none;
+  }
+
+  accordion-container h3.expanded {
+    @apply bg-gray-100 rounded;
+  }
+
+  accordion-container h3 div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  accordion-container [data-panel] {
+    @apply px-4 py-3 select-none;
   }
 }
 

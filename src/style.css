@@ -102,7 +102,10 @@ bangle-footer {
   }
 
   main {
-    @apply flex flex-col w-full px-3 pb-32 md:px-6;
+    @apply flex flex-col w-full pb-32;
+  }
+  main > * {
+    @apply px-3 md:pb-6;
   }
 
   bangle-footer a {

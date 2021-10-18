@@ -157,7 +157,7 @@ class BangleHeader extends HTMLElement {
       <div class="w-full xl:mx-12 xl:max-w-7xl flex justify-between">
         <div class="inline-flex items-center">
           <bangle-logo child-class="w-8 h-8"></bangle-logo>
-          <a class="text-3xl pl-1" href="/">Bangle.io</a>
+          <a class="text-3xl pl-1" href="https://bangle.io">Bangle.io</a>
         </div>
         <nav role="navigation" class="flex items-center">
           <a class="ml-6 ${currentPath('/help') ? 'active ' : ''}" href="/help">Help</a>

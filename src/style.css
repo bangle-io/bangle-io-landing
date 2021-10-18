@@ -159,7 +159,7 @@ bangle-footer {
   /*  */
 
   accordion-container h3 {
-    @apply px-4 py-3 select-none;
+    @apply px-4 py-3;
   }
 
   accordion-container h3.expanded {
@@ -175,7 +175,7 @@ bangle-footer {
   }
 
   accordion-container [data-panel] {
-    @apply px-4 py-3 select-none;
+    @apply px-4 py-3;
   }
 }
 

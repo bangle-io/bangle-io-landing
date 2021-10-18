@@ -13,39 +13,39 @@
     <bangle-header></bangle-header>
     <main>
       <section class="mt-24 section">
-        <div class="flex flex-col items-center content-max-width">
-          <h1 class="text-4xl font-black text-center break-words xl:text-6xl">Note taking for the next decade</h1>
-          <h2 class="max-w-screen-sm mt-6 text-xl font-light text-center text-gray-700 break-words xl:text-2xl dark:text-gray-100">
-            Bangle.io is a powerful yet simple note taking web app that works on top of your locally saved Markdown files.
-          </h2>
-        </div>
-        <div class="flex flex-col mt-12 content-max-width">
-          <div class="xl:px-24">
-            <picture>
-              <source type="image/webp" srcset="photos/hero-philosophy/hero-philosophy-640x388.webp 1024w, photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w" />
-              <img class="shadow rounded-xl" src="photos/hero-philosophy/hero-philosophy-640x388.jpg" srcset="photos/hero-philosophy/hero-philosophy-640x388.jpg 1024w, photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w" alt="…" />
-            </picture>
+        <div class="flex flex-col w-full">
+          <div class="flex flex-col items-center lg:hero-grid-description">
+            <h1 class="text-4xl font-black text-center break-words xl:text-6xl">Note taking for the next decade</h1>
+            <h2 class="max-w-screen-sm mt-6 text-xl font-light text-center text-gray-700 break-words xl:text-2xl dark:text-gray-100">
+              Bangle.io is a powerful yet simple note taking web app that works on top of your locally saved Markdown files.
+            </h2>
+            <div class="flex flex-col items-center mt-8 content-max-width">
+              <a href="https://app.bangle.io" class="to-app-link"> Get started </a>
+              <div class="flex flex-row flex-wrap">
+                <span class="inline-flex flex-row items-center px-1 text-xs text-gray-500 md:text-base dark:text-gray-300">
+                  <check-icon child-class="w-3 h-3 mr-1 "></check-icon>
+                  <span>No sign up</span>
+                </span>
+                <span class="inline-flex flex-row items-center px-1 text-xs text-gray-500 md:text-base dark:text-gray-300">
+                  <check-icon child-class="w-3 h-3 mr-1"></check-icon>
+                  <span>Fully offline</span>
+                </span>
+                <span class="flex-row items-center hidden px-1 text-gray-500 md:inline-flex dark:text-gray-300">
+                  <check-icon child-class="w-3 h-3 mr-1 "></check-icon>
+                  <span>No install</span>
+                </span>
+                <span class="inline-flex flex-row items-center px-1 text-xs text-gray-500 md:text-base dark:text-gray-300">
+                  <check-icon child-class="w-3 h-3 mr-1"></check-icon>
+                  <span>No data hostage</span>
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="flex flex-col items-center mt-12 content-max-width">
-          <a href="https://app.bangle.io" class="to-app-link"> Get started </a>
-          <div class="flex flex-row flex-wrap">
-            <span class="inline-flex flex-row items-center px-2 text-xs text-gray-500 md:text-base dark:text-gray-300">
-              <check-icon child-class="w-3 h-3 mr-1 "></check-icon>
-              <span>No sign up</span>
-            </span>
-            <span class="inline-flex flex-row items-center px-2 text-xs text-gray-500 md:text-base dark:text-gray-300">
-              <check-icon child-class="w-3 h-3 mr-1"></check-icon>
-              <span>Fully offline</span>
-            </span>
-            <span class="flex-row items-center hidden px-2 text-gray-500 md:inline-flex dark:text-gray-300">
-              <check-icon child-class="w-3 h-3 mr-1 "></check-icon>
-              <span>No install</span>
-            </span>
-            <span class="inline-flex flex-row items-center px-2 text-xs text-gray-500 md:text-base dark:text-gray-300">
-              <check-icon child-class="w-3 h-3 mr-1"></check-icon>
-              <span>No data hostage</span>
-            </span>
+          <div class="flex flex-col items-center mt-8 lg:hero-grid-video">
+            <video autoplay muted loop playsinline class="rounded-xl" height="784" width="1200" poster="photos/hero/hero-light-1200x786.webp">
+              <source src="photos/hero/hero-light-1200x784.webm" type="video/webm" />
+              <source src="photos/hero/hero-light-1200x784.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
@@ -114,46 +114,43 @@
         </div>
       </section>
 
+      <section class="py-16 bg-gray-100 dark:bg-gray-800 rounded-xl section section-organize">
+        <div class="section-villain-inner">
+          <div class="section-villain-info">
+            <h2 class="section-villain-title">Organize notes</h2>
+            <h3 class="section-villain-description">Whether you are a folder person or a backlink gardener Bangle.io has you covered.</h3>
+            <ul class="section-list">
+              <section-feature-list-item data-title="Action palette" data-video="photos/section-organize/section-organize-action"></section-feature-list-item>
+              <section-feature-list-item data-title="Backlinking" data-video="photos/section-organize/section-organize-backlink"></section-feature-list-item>
+              <section-feature-list-item data-title="Folder view" data-video="photos/section-organize/section-organize-folder"></section-feature-list-item>
+              <section-feature-list-item child-class="active" data-title="Tags" data-video="photos/section-organize/section-organize-tag"></section-feature-list-item>
+              <section-feature-list-item data-title="Workspaces" data-video="photos/section-organize/section-organize-workspace"></section-feature-list-item>
+              <section-feature-list-item data-title="Search" data-video="photos/section-organize/section-organize-search"></section-feature-list-item>
+            </ul>
+          </div>
+          <div class="section-villain-image">
+            <img width="960" height="760" class="invisible" />
+            <section-video child-class="z-10 shadow-md rounded-xl" data-src="photos/section-organize/section-organize-tag" height="760" width="960"></section-video>
+          </div>
+        </div>
+      </section>
+
       <section class="section section-editing">
         <div class="section-villain-inner">
           <div class="section-villain-info">
             <h2 class="section-villain-title">Rich editing</h2>
             <h3 class="section-villain-description">Bangle.io provides a clean WYSIWYG interface so you can focus on your notes.</h3>
             <ul class="section-list">
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Collapsible headings</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Date parsing</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Emojis</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Markdown shortcuts</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Todo lists</li>
+              <section-feature-list-item data-title="Collapsible headings" data-video="photos/section-rich/section-rich-collapsible"> </section-feature-list-item>
+              <section-feature-list-item child-class="active" data-title="Date parsing" data-video="photos/section-rich/section-rich-date"> </section-feature-list-item>
+              <section-feature-list-item data-title="Emojis" data-video="photos/section-rich/section-rich-emoji"> </section-feature-list-item>
+              <section-feature-list-item data-title="Markdown shortcuts" data-video="photos/section-rich/section-rich-markdown"> </section-feature-list-item>
+              <section-feature-list-item data-title="Todo lists" data-video="photos/section-rich/section-rich-todo"> </section-feature-list-item>
             </ul>
           </div>
           <div class="section-villain-image">
-            <picture>
-              <source type="image/webp" srcset="photos/hero-philosophy/hero-philosophy-640x388.webp 1024w, photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w" />
-              <img src="photos/hero-philosophy/hero-philosophy-640x388.jpg" srcset="photos/hero-philosophy/hero-philosophy-640x388.jpg 1024w, photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w" alt="…" />
-            </picture>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-organize">
-        <div class="section-villain-inner">
-          <div class="section-villain-info">
-            <h2 class="section-villain-title">Organize notes</h2>
-            <h3 class="section-villain-description">Whether you are a folder person or backlink gardener Bangle.io has you covered.</h3>
-            <ul class="section-list">
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Action palette</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Backlinks</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Folder view</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Tags</li>
-              <li><check-icon child-class="w-4 h-4 mr-2"></check-icon>Workspaces</li>
-            </ul>
-          </div>
-          <div class="section-villain-image">
-            <picture>
-              <source type="image/webp" srcset="photos/hero-philosophy/hero-philosophy-640x388.webp 1024w, photos/hero-philosophy/hero-philosophy-1280x777.webp 1500w" />
-              <img src="photos/hero-philosophy/hero-philosophy-640x388.jpg" srcset="photos/hero-philosophy/hero-philosophy-640x388.jpg 1024w, photos/hero-philosophy/hero-philosophy-1280x777.jpg 1500w" alt="…" />
-            </picture>
+            <img width="960" height="760" class="invisible" />
+            <section-video child-class="z-10 shadow-md rounded-xl" data-src="photos/section-rich/section-rich-date" height="760" width="960"></section-video>
           </div>
         </div>
       </section>

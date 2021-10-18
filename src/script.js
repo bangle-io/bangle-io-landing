@@ -176,17 +176,17 @@ if (!window.customElements.get('bangle-header')) {
 class BangleFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-    <footer class="w-full flex justify-center px-2 bg-gray-200 py-12 text-gray-600">
+    <footer class="w-full flex justify-center px-2 bg-gray-200 py-12 text-gray-600 dark:bg-gray-700 dark:text-gray-100">
       <div class="content-max-width w-full flex  flex-col lg:flex-row justify-between px-14">
         <div class="flex flex-col">
           <div class="">© 2021 Bangle.io</div>
           <div class="flex flex-col md:flex-row items-start mt-2">
-            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/about">About</a>
-            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/">Features</a>
-            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/community">Community</a>
-            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/help">Help</a>
-            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/privacy">Privacy Policy</a>
-            <a class="pr-5 py-1 text-gray-600 hover:text-gray-900" href="/roadmap">Roadmap</a>
+            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/about">About</a>
+            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/">Features</a>
+            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/community">Community</a>
+            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/help">Help</a>
+            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/privacy">Privacy Policy</a>
+            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/roadmap">Roadmap</a>
           </div>
         </div>
         <div class="flex flex-row justify-between">
@@ -264,4 +264,91 @@ if (!window.customElements.get('bangle-footer')) {
 
 function last(arr) {
   return arr[arr.length - 1];
+}
+
+class SectionVideo extends HTMLElement {
+  static get observedAttributes() {
+    return ['data-src'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    const src = this.querySelector('video source');
+
+    if (src) {
+      let video = this.querySelector('video');
+
+      video.src = `${this.getPath()}.mp4`;
+      video.poster = this.getPath() + '.webp';
+      video.load();
+      video.play();
+    }
+  }
+
+  getPath() {
+    const width = this.getAttribute('width');
+    const height = this.getAttribute('height');
+    return `${this.getAttribute('data-src')}-${width}x${height}`;
+  }
+
+  getVideoHTML() {
+    const width = this.getAttribute('width');
+    const height = this.getAttribute('height');
+    return `<video autoplay muted loop playsinline 
+      class="${this.getAttribute('child-class')}"
+      height="${height}"
+      width="${width}"
+      poster="${this.getPath()}.webp"
+    >
+      <source src="${this.getPath()}.webm" type="video/webm" />
+      <source src="${this.getPath()}.mp4" type="video/mp4" />
+    </video>`;
+  }
+
+  connectedCallback() {
+    this.innerHTML = this.getVideoHTML();
+  }
+}
+
+if (!window.customElements.get('section-video')) {
+  window.SectionVideo = SectionVideo;
+  window.customElements.define('section-video', SectionVideo);
+}
+
+class SectionFeatureListItem extends HTMLElement {
+  constructor() {
+    super(); // always call super() first in the constructor.
+    this.onClick = this.onClick.bind(this);
+  }
+  onClick() {
+    const parentSection = this.closest('section');
+    const listItems = [...parentSection.querySelectorAll('section-feature-list-item li')];
+    listItems.forEach((item) => item.classList.remove('active'));
+
+    this.querySelector('li').classList.add('active');
+
+    if (parentSection) {
+      const video = parentSection.querySelector('section-video');
+      video.setAttribute('data-src', this.getAttribute('data-video'));
+    } else {
+      throw new Error('Parent not found');
+    }
+  }
+  connectedCallback() {
+    this.innerHTML = `
+    <li class="${this.getAttribute('child-class') || ''}">
+      <check-icon child-class="hidden w-4 h-4 mr-2 lg:block"></check-icon>
+      <span>${this.getAttribute('data-title')}</span>
+    </li>
+    `;
+    this.addEventListener('click', this.onClick);
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this.onClick);
+  }
+}
+
+if (!window.customElements.get('section-feature-list-item')) {
+  window.SectionFeatureListItem = SectionFeatureListItem;
+  window.customElements.define('section-feature-list-item', SectionFeatureListItem);
 }

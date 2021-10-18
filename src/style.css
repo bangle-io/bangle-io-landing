@@ -58,6 +58,23 @@ bangle-footer {
       grid-column: 1 / -1;
       grid-row: 1 / 3;
     }
+
+    .hero-grid-container {
+      display: grid;
+      max-width: 1300px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .hero-grid-description {
+      grid-column: 1/ 2;
+      grid-row: 1 / 3;
+    }
+
+    .hero-grid-video {
+      grid-column: 2/ 3;
+      grid-row: 1 / 3;
+    }
   }
 
   .section-own-notes-video-parent-upper {
@@ -103,7 +120,7 @@ bangle-footer {
   .section {
     @apply flex flex-col items-center mt-32;
   }
-
+  /*  */
   .section-villain-inner {
     @apply flex flex-col items-center content-max-width lg:flex-row;
   }
@@ -117,17 +134,29 @@ bangle-footer {
     @apply text-lg text-gray-700 break-words xl:text-xl dark:text-gray-100;
   }
   .section-villain-image {
-    @apply flex flex-col flex-grow max-w-screen-sm mt-12 lg:width-67p lg:mt-0;
+    @apply relative flex flex-row flex-grow max-w-screen-sm mt-12 lg:width-67p lg:mt-0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
-  .section-villain-image img {
-    @apply shadow rounded-xl;
+  /* To make things overlap and avoid losing height information and get a flash */
+  .section-villain-image > * {
+    grid-column: 1/3;
+    grid-row: 1/3;
   }
+
   .section-list {
-    @apply flex flex-row mt-3 section-villain-description lg:flex-col;
+    @apply flex flex-row flex-wrap mt-3 section-villain-description lg:flex-col;
   }
-  .section-list > li {
-    @apply inline-flex flex-row items-center my-1 mr-3 text-base font-medium text-gray-900 cursor-pointer lg:text-lg dark:text-white hover:underline;
+  .section-list li {
+    @apply inline-flex flex-row items-center px-2 py-1 mr-3 text-sm font-medium text-gray-600 transition-all rounded-md cursor-pointer lg:px-0 lg:text-lg dark:text-gray-400 lg:hover:underline;
   }
+
+  .section-list li.active {
+    @apply pl-3 text-gray-900 underline dark:text-white;
+  }
+
+  /*  */
 
   accordion-container h3 {
     @apply px-4 py-3 select-none;
@@ -148,4 +177,12 @@ bangle-footer {
   accordion-container [data-panel] {
     @apply px-4 py-3 select-none;
   }
+}
+
+.transition-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }

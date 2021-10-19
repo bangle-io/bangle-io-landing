@@ -152,6 +152,12 @@ if (!window.customElements.get('chevron-up-icon')) {
 class BangleHeader extends HTMLElement {
   connectedCallback() {
     const currentPath = (p) => window.location.pathname === p;
+
+    let t = `
+    <a class="ml-6 ${currentPath('/help') ? 'active ' : ''}" href="/help">Help</a>
+    <a class="ml-6 ${currentPath('/community') ? 'active ' : ''}" href="/community">Community</a>
+
+    `;
     this.innerHTML = `
     <header class="w-full flex justify-center px-4">
       <div class="w-full xl:mx-12 xl:max-w-7xl flex justify-between">
@@ -160,8 +166,6 @@ class BangleHeader extends HTMLElement {
           <a class="text-3xl pl-1" href="https://bangle.io">Bangle.io</a>
         </div>
         <nav role="navigation" class="flex items-center">
-          <a class="ml-6 ${currentPath('/help') ? 'active ' : ''}" href="/help">Help</a>
-          <a class="ml-6 ${currentPath('/community') ? 'active ' : ''}" href="/community">Community</a>
         </nav>
       </div>
     </header>`;
@@ -175,18 +179,21 @@ if (!window.customElements.get('bangle-header')) {
 
 class BangleFooter extends HTMLElement {
   connectedCallback() {
+    let t = `
+    <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/about">About</a>
+    <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/">Features</a>
+    <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/help">Help</a>
+    <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/roadmap">Roadmap</a>
+    <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/community">Community</a>
+
+    `;
     this.innerHTML = `
     <footer class="w-full flex justify-center px-2 bg-gray-200 py-12 text-gray-600 dark:bg-gray-700 dark:text-gray-100">
       <div class="content-max-width w-full flex  flex-col lg:flex-row justify-between px-14">
         <div class="flex flex-col">
           <div class="">© 2021 Bangle.io</div>
           <div class="flex flex-col md:flex-row items-start mt-2">
-            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/about">About</a>
-            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/">Features</a>
-            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/community">Community</a>
-            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/help">Help</a>
             <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/privacy">Privacy Policy</a>
-            <a class="pr-5 py-1 text-gray-600 lg:hover:text-gray-900 dark:text-gray-200 dark:lg:hover:text-white" href="/roadmap">Roadmap</a>
           </div>
         </div>
         <div class="flex flex-row justify-between">

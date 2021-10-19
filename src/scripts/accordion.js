@@ -29,7 +29,9 @@ class AccordionContainerElement extends HTMLElement {
 
   upgradePanels() {
     const panels = Array.from(this.querySelectorAll('[data-panel]'));
-    panels.forEach((panel) => panel.setAttribute('hidden', ''));
+    panels.forEach((panel) => {
+      panel.classList.add('hidden');
+    });
   }
 
   connectedCallback() {
@@ -59,8 +61,7 @@ class AccordionContainerElement extends HTMLElement {
     );
     if (!eventShouldFire) return;
 
-    const isExpanded =
-      toggle.getAttribute('aria-expanded') == 'true' ? true : false;
+    const isExpanded = toggle.getAttribute('aria-expanded') == 'true' ? true : false;
 
     if (!isExpanded) {
       toggle.parentElement.classList.add('expanded');
@@ -73,16 +74,11 @@ class AccordionContainerElement extends HTMLElement {
     }
 
     toggle.setAttribute('aria-expanded', !isExpanded);
-    isExpanded
-      ? panel.setAttribute('hidden', '')
-      : panel.removeAttribute('hidden');
+    isExpanded ? panel.classList.add('hidden') : panel.classList.remove('hidden');
   }
 }
 
 if (!window.customElements.get('accordion-container')) {
   window.AccordionContainerElement = AccordionContainerElement;
-  window.customElements.define(
-    'accordion-container',
-    AccordionContainerElement,
-  );
+  window.customElements.define('accordion-container', AccordionContainerElement);
 }

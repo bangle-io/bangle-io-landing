@@ -163,7 +163,10 @@ class BangleHeader extends HTMLElement {
       <div class="w-full xl:mx-12 xl:max-w-7xl flex justify-between">
         <div class="inline-flex items-center">
           <bangle-logo child-class="w-8 h-8"></bangle-logo>
-          <a class="text-3xl pl-1" href="https://bangle.io">Bangle.io</a>
+          <a class="text-3xl pl-1 z-5" href="https://bangle.io">Bangle.io</a>
+          <span class="relative">
+            <span class="z-0 filter sepia absolute ml-1  bg-yellow-100 px-1 rounded dark:text-gray-700" style="top: -1.3rem;left: -1rem; font-size: 0.6rem;">BETA</span>
+          </span>
         </div>
         <nav role="navigation" class="flex items-center">
         </nav>

@@ -331,6 +331,8 @@ class SectionFeatureListItem extends HTMLElement {
   }
   onClick() {
     const parentSection = this.closest('section');
+    console.log(parentSection.classList.toString());
+
     const listItems = [...parentSection.querySelectorAll('section-feature-list-item li')];
     listItems.forEach((item) => item.classList.remove('active'));
 
@@ -341,6 +343,15 @@ class SectionFeatureListItem extends HTMLElement {
       video.setAttribute('data-src', this.getAttribute('data-video'));
     } else {
       throw new Error('Parent not found');
+    }
+
+    if (window.fathom) {
+      const isParentEditing = parentSection.classList.toString().includes('editing');
+      if (isParentEditing) {
+        window.fathom.trackGoal('ZZBEKFGY', 0);
+      } else {
+        window.fathom.trackGoal('FVG0RBHB', 0);
+      }
     }
   }
   connectedCallback() {

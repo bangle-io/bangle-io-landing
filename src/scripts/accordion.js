@@ -67,6 +67,9 @@ class AccordionContainerElement extends HTMLElement {
       toggle.parentElement.classList.add('expanded');
       toggle.removeChild(toggle.querySelector('chevron-up-icon'));
       toggle.appendChild(document.createElement('chevron-down-icon'));
+      if (window.fathom) {
+        window.fathom.trackGoal('C6WEDW4U', 0);
+      }
     } else {
       toggle.parentElement.classList.remove('expanded');
       toggle.removeChild(toggle.querySelector('chevron-down-icon'));

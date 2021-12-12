@@ -246,7 +246,7 @@ class BangleFooter extends HTMLElement {
             </a>
             <a
               class="pr-8 inline-flex flex-row-reverse"
-              href="https://github.com/bangle-io"
+              href="https://github.com/bangle-io/bangle-io"
               target="_blank"
             >
               <span class="pl-2 sr-only">Github</span>
